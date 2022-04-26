@@ -14,11 +14,17 @@ public class MainServer {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Server s=new Server(2000);
-        s.attendi();
-        s.scrittura();
-        s.data();
-        s.chiusuraConnessione();
+        int porta=2000;
+        int tempoAtt=20000;
+        
+        Server s=new Server(porta, tempoAtt);
+        while(true) {
+            CountDown timer=new CountDown(tempoAtt);
+            s.attendi();
+            s.scrittura("Tempo di ascolto del server: "+(tempoAtt/1000)+" secondi");
+            s.scrittura(String.valueOf(tempoAtt));
+            timer.start();
+        }
     }
     
 }

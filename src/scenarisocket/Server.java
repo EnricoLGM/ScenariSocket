@@ -29,6 +29,15 @@ public class Server {
         }
     }
     
+    public Server(int porta, int tempo) {
+        try {
+            serverSock=new ServerSocket(porta);
+            serverSock.setSoTimeout(tempo);
+        } catch (IOException ex) {
+            Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public void attendi() {
         try {
             server=serverSock.accept();
@@ -58,6 +67,15 @@ public class Server {
     public void scrittura() {
         try {
             writer.write("Benvenuto!\n");
+            writer.flush();
+        } catch (IOException ex) {
+            Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void scrittura(String testo) {
+        try {
+            writer.write(testo + "\n");
             writer.flush();
         } catch (IOException ex) {
             Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);

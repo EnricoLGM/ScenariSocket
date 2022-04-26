@@ -19,10 +19,15 @@ public class MainClient {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        int porta=2000;
+        int tempoAtt;
+        
         try {
-            Client c=new Client(InetAddress.getLocalHost(), 2000);
-            c.lettura();
-            c.data();
+            Client c=new Client(InetAddress.getLocalHost(), porta);
+            System.out.println(c.letturaStringa());
+            tempoAtt=Integer.parseInt(c.letturaStringa());
+            CountDown timer=new CountDown(tempoAtt);
+            timer.start();
             c.chiusura();
         } catch (UnknownHostException ex) {
             Logger.getLogger(MainClient.class.getName()).log(Level.SEVERE, null, ex);

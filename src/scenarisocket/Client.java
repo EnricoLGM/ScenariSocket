@@ -41,6 +41,18 @@ public class Client {
         System.out.println("Socket" + client);
     }
     
+    public String letturaStringa() {
+        String ritorno="";
+        try {
+            ritorno=reader.readLine();
+        } catch (IOException ex) {
+            Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.println("Connessione Avvenuta\n");
+        System.out.println("Socket" + client);
+        return ritorno;
+    }
+    
     public void scrittura(String testo) {
         try {
             //scrivo al server un testo dato come parametro alla funzione
