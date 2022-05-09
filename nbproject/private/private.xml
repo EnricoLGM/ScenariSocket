@@ -5,7 +5,8 @@
         <group name="NetBeansProjects">
             <file>file:/C:/Users/enric/Documents/NetBeansProjects/ScenariSocket/src/scenarisocket/MainClient.java</file>
             <file>file:/C:/Users/enric/Documents/NetBeansProjects/ScenariSocket/src/scenarisocket/Server.java</file>
-            <file>file:/C:/Users/enric/Documents/NetBeansProjects/ScenariSocket/src/scenarisocket/CountDown.java</file>
+            <file>file:/C:/Users/enric/Documents/NetBeansProjects/ScenariSocket/src/scenarisocket/ClientHandler.java</file>
+            <file>file:/C:/Users/enric/Documents/NetBeansProjects/ScenariSocket/src/scenarisocket/Client.java</file>
             <file>file:/C:/Users/enric/Documents/NetBeansProjects/ScenariSocket/src/scenarisocket/MainServer.java</file>
         </group>
     </open-files>

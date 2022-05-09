@@ -37,4 +37,29 @@ public class ClientHandler implements Runnable {
     public void run() {
         //Da inserire le istruzioni per comunicare con il client
     }
+    
+    public void chiusuraConnessione() {
+        try {
+            client.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void scrittura(String testo) {
+        try {
+            writer.write(testo + "\n");
+            writer.flush();
+        } catch (IOException ex) {
+            Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void lettura() {
+        try {
+            System.out.println(reader.readLine());
+        } catch (IOException ex) {
+            Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
