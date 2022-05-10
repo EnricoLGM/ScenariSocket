@@ -48,6 +48,19 @@ public class Server {
         }
     }
     
+    public Socket attendiSocket() {
+        //Ritorna un socket per verificare l'avvenuta connessione
+        try {
+            server=serverSock.accept();
+            reader=new BufferedReader(new InputStreamReader(server.getInputStream()));
+            writer=new BufferedWriter(new OutputStreamWriter(server.getOutputStream()));
+            //return server;
+        } catch (IOException ex) {
+            Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return server;
+    }
+    
     public void chiusuraServer() {
         try {
             serverSock.close();

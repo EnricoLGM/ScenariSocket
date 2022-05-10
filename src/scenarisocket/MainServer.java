@@ -20,10 +20,11 @@ public class MainServer {
         Server s=new Server(porta, tempoAtt);
         while(true) {
             CountDown timer=new CountDown(tempoAtt);
-            s.attendi();
-            s.scrittura("Tempo di ascolto del server: "+(tempoAtt/1000)+" secondi");
-            s.scrittura(String.valueOf(tempoAtt));
-            timer.start();
+            if(s.attendiSocket()!=null) {
+                s.scrittura("Tempo di ascolto del server: "+(tempoAtt/1000)+" secondi");
+                s.scrittura(String.valueOf(tempoAtt));
+                timer.start();
+            }
         }
     }
     
