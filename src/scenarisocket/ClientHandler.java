@@ -9,6 +9,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.net.InetAddress;
 import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -35,7 +36,10 @@ public class ClientHandler implements Runnable {
 
     @Override
     public void run() {
+        System.out.println("Invio messaggio al client: " + client);
         scrittura("Ciao client!");
+        System.out.println("Lettura del messaggio del client");
+        lettura();
         chiusuraConnessione();
     }
     

@@ -24,11 +24,14 @@ public class MainClient {
         
         try {
             Client c=new Client(InetAddress.getLocalHost(), porta);
-            System.out.println(c.letturaStringa());
+            /*System.out.println(c.letturaStringa());
             tempoAtt=Integer.parseInt(c.letturaStringa());
             CountDown timer=new CountDown(tempoAtt);
-            timer.start();
+            timer.start();*/
+            c.lettura();
+            c.scrittura("Ciao Server!");
             c.chiusura();
+            
         } catch (UnknownHostException ex) {
             Logger.getLogger(MainClient.class.getName()).log(Level.SEVERE, null, ex);
         }
