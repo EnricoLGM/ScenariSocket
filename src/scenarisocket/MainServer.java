@@ -17,13 +17,15 @@ public class MainServer {
         int porta=2000;
         int tempoAtt=20000;
         
-        Server s=new Server(porta, tempoAtt);
+        //Server s=new Server(porta, tempoAtt);
+        Server s=new Server(porta);
         while(true) {
             CountDown timer=new CountDown(tempoAtt);
             if(s.attendiSocket()!=null) {
                 s.scrittura("Tempo di ascolto del server: "+(tempoAtt/1000)+" secondi");
                 s.scrittura(String.valueOf(tempoAtt));
                 timer.start();
+                s.chiusuraConnessione();
             }
         }
     }
