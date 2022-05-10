@@ -35,7 +35,8 @@ public class ClientHandler implements Runnable {
 
     @Override
     public void run() {
-        //Da inserire le istruzioni per comunicare con il client
+        scrittura("Ciao client!");
+        chiusuraConnessione();
     }
     
     public void chiusuraConnessione() {

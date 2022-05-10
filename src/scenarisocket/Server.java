@@ -48,6 +48,16 @@ public class Server {
         }
     }
     
+    public void attendiHandler() {
+        try {
+            server=serverSock.accept();
+            ClientHandler c=new ClientHandler(server);
+            new Thread(c).start();
+        } catch (IOException ex) {
+            Logger.getLogger(Server.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public void chiusuraServer() {
         try {
             serverSock.close();
