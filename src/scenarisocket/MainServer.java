@@ -18,13 +18,13 @@ public class MainServer {
         int tempoAtt=20000;
         
         Server s=new Server(porta, tempoAtt);
-        //CountDown timer=new CountDown(tempoAtt);
-        
-        s.attendi();
-        s.scrittura("Tempo di ascolto del server: "+(tempoAtt/1000)+" secondi");
-        s.scrittura(String.valueOf(tempoAtt));
-        //timer.start();
-        //s.chiusuraConnessione();
+        while(true) {
+            CountDown timer=new CountDown(tempoAtt);
+            s.attendi();
+            s.scrittura("Tempo di ascolto del server: "+(tempoAtt/1000)+" secondi");
+            s.scrittura(String.valueOf(tempoAtt));
+            timer.start();
+        }
     }
     
 }
